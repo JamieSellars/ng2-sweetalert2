@@ -1,4 +1,4 @@
-import * as sweetAlert from 'sweetalert2';
+var sweetAlert = require('sweetalert2');
 
 export class SweetAlertService {
   constructor() {}
@@ -13,7 +13,7 @@ export class SweetAlertService {
       confirmButtonText: 'Submit',
       input: 'text'
     };
-    return sweetAlert(Object.assign({}, baseOptions, options));
+    return sweetAlert((<any>Object).assign({}, baseOptions, options));
   }
 
   confirm(options) {
@@ -22,7 +22,7 @@ export class SweetAlertService {
       confirmButtonText: 'Confirm',
       type: 'warning'
     };
-    return sweetAlert(Object.assign(baseOptions, options));
+    return sweetAlert((<any>Object).assign(baseOptions, options));
   }
 
   alert(options) {
@@ -30,26 +30,26 @@ export class SweetAlertService {
       confirmButtonText: 'OK',
       type: 'info'
     };
-    return sweetAlert(Object.assign(baseOptions, options));
+    return sweetAlert((<any>Object).assign(baseOptions, options));
   }
 
   question(options) {
-    return this.alert(Object.assign({ type: 'question' }, options));
+    return this.alert((<any>Object).assign({ type: 'question' }, options));
   }
 
   success(options) {
-    return this.alert(Object.assign({ type: 'success' }, options));
+    return this.alert((<any>Object).assign({ type: 'success' }, options));
   }
 
   error(options) {
-    return this.alert(Object.assign({ type: 'error' }, options));
+    return this.alert((<any>Object).assign({ type: 'error' }, options));
   }
 
   warn(options) {
-    return this.alert(Object.assign({ type: 'warn' }, options));
+    return this.alert((<any>Object).assign({ type: 'warn' }, options));
   }
 
   info(options) {
-    return this.alert(Object.assign({ type: 'info' }, options));
+    return this.alert((<any>Object).assign({ type: 'info' }, options));
   }
 }
