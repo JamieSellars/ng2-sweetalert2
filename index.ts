@@ -7,7 +7,7 @@ export class SweetAlertService {
     return sweetAlert(args);
   }
 
-  prompt(options) {
+  prompt(options: any) {
     const baseOptions = {
       showCancelButton: true,
       confirmButtonText: 'Submit',
@@ -16,7 +16,7 @@ export class SweetAlertService {
     return sweetAlert(Object.assign({}, baseOptions, options));
   }
 
-  confirm(options) {
+  confirm(options :any) {
     const baseOptions = {
       showCancelButton: true,
       confirmButtonText: 'Confirm',
@@ -25,7 +25,7 @@ export class SweetAlertService {
     return sweetAlert(Object.assign(baseOptions, options));
   }
 
-  alert(options) {
+  alert(options :any) {
     const baseOptions = {
       confirmButtonText: 'OK',
       type: 'info'
@@ -33,23 +33,23 @@ export class SweetAlertService {
     return sweetAlert(Object.assign(baseOptions, options));
   }
 
-  question(options) {
+  question(options :any) {
     return this.alert(Object.assign({ type: 'question' }, options));
   }
 
-  success(options) {
+  success(options :any) {
     return this.alert(Object.assign({ type: 'success' }, options));
   }
 
-  error(options) {
+  error(options :any) {
     return this.alert(Object.assign({ type: 'error' }, options));
   }
 
-  warn(options) {
+  warn(options :any) {
     return this.alert(Object.assign({ type: 'warn' }, options));
   }
 
-  info(options) {
+  info(options :any) {
     return this.alert(Object.assign({ type: 'info' }, options));
   }
 }
